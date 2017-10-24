@@ -19,9 +19,7 @@
     "nedb": "^1.8.0",
     "reac": "0.0.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
-  "devDependencies": {
+    "react-dom": "^16.0.0",
     "assets-webpack-plugin": "^3.5.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -36,6 +34,8 @@
     "nsp": "^2.1.0",
     "webpack": "^3.5.2",
     "webpack-dev-server": "^2.7.1",
-    "webpack-md5-hash": "^0.0.5"
+    "webpack-md5-hash": "^0.0.5" 
+  },
+  "devDependencies": {
   }
 }
