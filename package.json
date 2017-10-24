@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,26 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-validator": "^4.2.1",
-    "nedb": "^1.8.0"
+    "nedb": "^1.8.0",
+    "reac": "0.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "inline-chunk-manifest-html-webpack-plugin": "^1.1.1",
+    "inline-manifest-webpack-plugin": "^3.0.1",
+    "nsp": "^2.1.0",
+    "webpack": "^3.5.2",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-md5-hash": "^0.0.5"
   }
 }
