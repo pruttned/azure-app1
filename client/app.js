@@ -62,14 +62,14 @@ class App extends Component {
             </Header.Subheader>
           </Header.Content>
         </Header>
-        <Segment>
+        <Segment color="blue">
           <div>
             <form onSubmit={this.onAddFormSubmit}>
               <Input
                 fluid
                 value={this.state.message}
                 size="large"
-                action={{ color: 'teal', icon: 'plus' }}
+                action={{ color: 'blue', icon: 'plus' }}
                 onChange={this.onMsgInputChange}
                 placeholder="Message..." />
             </form>
