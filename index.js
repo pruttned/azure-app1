@@ -6,14 +6,17 @@ const DataStore = require('nedb');
 const db = new DataStore({ filename: 'db.db', autoload: true });
 const app = express();
 
-app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/client-dist'));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(expressValidator());
 
 
-app.post('/post', (req, res) => {
+app.get('/posts', (req, res) => {
+    sendMessages(res);
+});
+app.post('/posts', (req, res) => {
     req.sanitizeBody('message').escape();
     if (req.body.message) {
 
@@ -21,8 +24,10 @@ app.post('/post', (req, res) => {
             date: new Date(),
             message: req.body.message
         }, () => {
-            renderIndex(res);
+            sendMessages(res);
         });
+    } else {
+        sendMessages(res);
     }
 });
 
@@ -31,11 +36,11 @@ const port = process.env.port || 3000;
 app.listen(port, () => {
     console.log(`listening on ${port}`);
 });
-
-function renderIndex(res) {
+function sendMessages(res) {
     db.find({}).sort({ date: -1 }).exec((err, docs) => {
-        res.render('index', {
+        res.json({
             notes: docs
         });
-    })
+    });
 }
+

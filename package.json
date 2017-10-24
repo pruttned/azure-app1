@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "bstart": "npm run build && npm start",
     "build": "webpack",
     "postinstall": "npm run build"
   },
