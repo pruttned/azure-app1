@@ -14,11 +14,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 
-var notes = [
-    { date: new Date(), message: 'hello' },
-    { date: new Date(), message: 'hell<b>o2</b>' },
-]
-
 app.post('/', (req, res) => {
     req.sanitizeBody('message').escape();
 
