@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 
 
-app.post('/', (req, res) => {
+app.post('/post', (req, res) => {
     req.sanitizeBody('message').escape();
     if (req.body.message) {
 

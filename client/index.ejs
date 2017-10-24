@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>notes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"></link>
-
-  <title>My React App</title>
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
+  <link rel="stylesheet" href="css/style.css">
   <%=htmlWebpackPlugin.files.webpackChunkManifest%>
     <%=htmlWebpackPlugin.files.webpackManifest%>
 </head>
 
 <body>
-  <div id="main"></div>
-  <% for (key in htmlWebpackPlugin.files.chunks) { %>
-    <script defer src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
-    <% } %>
+    <div id="main"></div>
+    <% for (key in htmlWebpackPlugin.files.chunks) { %>
+      <script defer src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+      <% } %>
 </body>
+
 </html>
